@@ -25,6 +25,7 @@ export default {
         apiObject(genericUrl) {
             axios.get(genericUrl)
                 .then(risposta => {
+                    this.store.arrayObject = [];
                     risposta.data.results.forEach(element => {
                         this.store.arrayObject.push(element);
                         console.log(element);
