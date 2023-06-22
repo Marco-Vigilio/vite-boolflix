@@ -2,12 +2,12 @@
     <div class="item">
         <h1>{{ title }}</h1>
         <h2>{{ originalTitle }}</h2>
-        <div>
-            <h3>Original languages: {{ language }}</h3>
-            <p>{{ imageFlag }}</p>
-            <img :src="imageFlag" alt="">
+        <div v-if="verify === true">
+
+            <img :src="imageFlag" :alt="nameFlag + ' flag'">
         </div>
 
+        <h3 v-else>Original languages: {{ language }}</h3>
 
         <h4>{{ vote }}</h4>
 
@@ -22,6 +22,8 @@ export default {
         return {
             store,
             imageFlag: "",
+            nameFlag: "",
+            verify: false,
         }
     },
     props: {
@@ -33,19 +35,23 @@ export default {
     methods: {
         show(initials) {
             let lingua = initials;
-            console.log(lingua);
             this.store.arrayLanguages.forEach(element => {
                 let iso = element.iso;
                 if (iso === lingua) {
-                    console.log(element.image);
                     this.imageFlag = element.image;
+                    this.nameFlag = element.country;
+                    this.verify = true;
                 }
-                console.log();
+
             });
         }
     },
 
     beforeMount() {
+        this.show(this.language);
+    },
+
+    updated() {
         this.show(this.language);
     },
 }

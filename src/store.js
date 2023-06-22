@@ -104,7 +104,7 @@ export const store = reactive({
             iso: 'lv',
             language: 'Latvian',
             country: 'Latvia',
-            image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Latvia.sv'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Flag_of_Latvia.svg'
         },
         {
             iso: 'el',
