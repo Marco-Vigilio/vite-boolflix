@@ -2,8 +2,13 @@
     <div class="item">
         <h1>{{ title }}</h1>
         <h2>{{ originalTitle }}</h2>
+        <div>
+            <h3>Original languages: {{ language }}</h3>
+            <p>{{ imageFlag }}</p>
+            <img :src="imageFlag" alt="">
+        </div>
 
-        <h3>{{ language }}</h3>
+
         <h4>{{ vote }}</h4>
 
     </div>
@@ -16,7 +21,7 @@ export default {
     data() {
         return {
             store,
-            text: "",
+            imageFlag: "",
         }
     },
     props: {
@@ -26,9 +31,22 @@ export default {
         vote: String,
     },
     methods: {
+        show(initials) {
+            let lingua = initials;
+            console.log(lingua);
+            this.store.arrayLanguages.forEach(element => {
+                let iso = element.iso;
+                if (iso === lingua) {
+                    console.log(element.image);
+                    this.imageFlag = element.image;
+                }
+                console.log();
+            });
+        }
     },
 
     beforeMount() {
+        this.show(this.language);
     },
 }
 </script>
@@ -37,7 +55,7 @@ export default {
     border: 2px solid black;
 
     img {
-        width: 70px;
+        width: 200px;
     }
 }
 </style>

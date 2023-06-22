@@ -37,12 +37,9 @@ export default {
     },
 
     methods: {
-        show() {
-
-        },
     },
+
     beforeMount() {
-        this.show();
     },
 }
 </script>
