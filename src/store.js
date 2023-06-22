@@ -8,19 +8,19 @@ export const store = reactive({
             iso: 'en',
             language: 'English',
             country: 'United Kingdom',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_del_Regno_Unito#/media/File:Flag_of_the_United_Kingdom_(1-2).svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg'
         },
         {
             iso: 'es',
             language: 'Spanish',
             country: 'Spain',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_della_Spagna#/media/File:Flag_of_Spain.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg'
         },
         {
             iso: 'fr',
             language: 'French',
             country: 'France',
-            image: 'https://it.wikipedia.org/wiki/File:Flag_of_France_(1794%E2%80%931815,_1830%E2%80%931974,_2020%E2%80%93present).svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg'
         },
         {
             iso: 'de',
@@ -32,7 +32,7 @@ export const store = reactive({
             iso: 'it',
             language: 'Italian',
             country: 'Italy',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_d%27Italia#/media/File:Flag_of_Italy.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg'
         },
         {
             iso: 'ja',
@@ -44,43 +44,43 @@ export const store = reactive({
             iso: 'pt',
             language: 'Portuguese',
             country: 'Portugal',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_del_Portogallo#/media/File:Flag_of_Portugal.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg'
         },
         {
             iso: 'ru',
             language: 'Russian',
             country: 'Russia',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_della_Russia#/media/File:Flag_of_Russia.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/2560px-Flag_of_Russia.svg.png'
         },
         {
             iso: 'ar',
             language: 'Arabic',
             country: 'Egypt',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_dell%27Egitto#/media/File:Flag_of_Egypt.s'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg'
         },
         {
             iso: 'zh',
             language: 'Chinese',
             country: 'China',
-            image: "https://it.wikipedia.org/wiki/Bandiera_della_Repubblica_Popolare_Cinese#/media/File:Flag_of_the_People's_Republic_of_China.svg"
+            image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg"
         },
         {
             iso: 'hi',
             language: 'Hindi',
             country: 'India',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_dell%27India#/media/File:Flag_of_India.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg'
         },
         {
             iso: 'ko',
             language: 'Korean',
             country: 'South Korea',
-            image: 'https://it.wikipedia.org/wiki/File:Flag_of_South_Korea.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg'
         },
         {
             iso: 'nl',
             language: 'Dutch',
             country: 'Netherlands',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_dei_Paesi_Bassi#/media/File:Flag_of_the_Netherlands.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg'
         },
         {
             iso: 'pl',
@@ -98,7 +98,7 @@ export const store = reactive({
             iso: 'sv',
             language: 'Swedish',
             country: 'Sweden',
-            image: 'https://it.wikipedia.org/wiki/File:Flag_of_Sweden.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Sweden.svg'
         },
         {
             iso: 'lv',
@@ -116,7 +116,7 @@ export const store = reactive({
             iso: 'ml',
             language: 'Malayalam',
             country: 'India',
-            image: 'https://it.wikipedia.org/wiki/Bandiera_dell%27India#/media/File:Flag_of_India.svg'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_India.svg'
         },
         {
             iso: 'sr',
