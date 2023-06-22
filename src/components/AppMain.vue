@@ -15,7 +15,7 @@ export default {
         return {
             urlFilm: "https://api.themoviedb.org/3/search/movie?api_key=514cb42a7e6e0b17e72add7954487401",
             urlSerieTV: "https://api.themoviedb.org/3/search/tv?api_key=514cb42a7e6e0b17e72add7954487401",
-            ulrFlags: "https://restcountries.com/v3.1/all",
+            //ulrFlags: "https://restcountries.com/v3.1/all",
             store,
         }
     },
@@ -64,33 +64,8 @@ export default {
 
         },
 
-        flags(genericUrl) {
-            axios.get(genericUrl)
-                .then(risposta => {
-                    console.log(risposta.data);
-                    risposta.data.forEach(element => {
-                        console.log(element);
-                        console.log(element.languages);
-                        console.log(element.name.common);
-                        console.log();
-                        //console.log(element.altSpellings[0]);
-                        //console.log(element.flags.svg);
-                        //console.log(element.name.common);
-
-                        let country = {
-                            name: element.name.common,
-                            language: element.cca2,
-                            flag: element.flags.svg,
-                        }
-                        this.store.arrayFlags.push(country);
-                    });
-                    //console.log(this.store.arrayFlags);
-                });
-        },
-
     },
     created() {
-        this.flags(this.ulrFlags);
     },
 
     updated() {
