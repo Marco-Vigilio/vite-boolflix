@@ -19,7 +19,7 @@ export default {
         showStarVote(numVote) {
             let num = Math.floor(numVote);
             num = num / 2;
-            num = Math.floor(num);
+            num = Math.ceil(num);
             this.starsFull = num;
             this.starsEmpty = 5 - this.starsFull;
         }
