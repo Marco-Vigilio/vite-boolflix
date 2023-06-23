@@ -2,7 +2,7 @@ import { reactive } from "vue";
 export const store = reactive({
     arrayObjectFilm: [],
     arrayObjectSerieTv: [],
-    arrayFlags: [],
+    urlImage: "http://image.tmdb.org/t/p/w500",
     arrayLanguages: [
         {
             iso: 'en',

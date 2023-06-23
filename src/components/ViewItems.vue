@@ -2,14 +2,13 @@
     <div>
         <h1>Film</h1>
         <ItemFilm v-for="element in store.arrayObjectFilm" :title=element.title :originalTitle=element.original_title
-            :language=element.original_language :vote=element.vote_average />
+            :language=element.original_language :vote=element.vote_average :image=element.poster_path />
     </div>
     <div>
-        <!--
         <h1>Serie Tv</h1>
         <ItemSerieTV v-for="element in store.arrayObjectSerieTv" :title=element.name :originalTitle=element.original_name
-            :language=element.original_language :vote=element.vote_average />
-            -->
+            :language=element.original_language :vote=element.vote_average :image=element.poster_path />
+
         <!--
         <div v-for="element in store.arrayFlags">
             <p>

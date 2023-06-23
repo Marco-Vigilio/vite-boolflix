@@ -1,36 +1,46 @@
 <template>
     <div class="item">
-        <h1>{{ title }}</h1>
-        <h2>{{ originalTitle }}</h2>
-        <div v-if="verify === true">
+        <div v-if="verifyImg === true">
+            <img :src="img" :alt="title + ' poster'" />
 
-            <img :src="imageFlag" :alt="nameFlag + ' flag'">
+        </div>
+        <div v-else>
+            <p>Image not available</p>
         </div>
 
+        <h1>{{ title }}</h1>
+        <h2>{{ originalTitle }}</h2>
+        <div v-if="verifyFlag === true">
+            <img :src="imageFlag" :alt="nameFlag + ' flag'">
+        </div>
         <h3 v-else>Original languages: {{ language }}</h3>
-
-        <h4>{{ vote }}</h4>
-
+        <FilmVote :voteFilm=vote />
     </div>
 </template>
 <script>
-
+import FilmVote from "./FilmVote.vue";
 import { store } from "../store";
 export default {
     name: "ItemFilm",
+    components: {
+        FilmVote,
+    },
     data() {
         return {
             store,
             imageFlag: "",
             nameFlag: "",
-            verify: false,
-        }
+            verifyFlag: false,
+            img: "",
+            verifyImg: false,
+        };
     },
     props: {
         title: String,
         originalTitle: String,
         language: String,
         vote: String,
+        image: String,
     },
     methods: {
         show(initials) {
@@ -40,20 +50,26 @@ export default {
                 if (iso === lingua) {
                     this.imageFlag = element.image;
                     this.nameFlag = element.country;
-                    this.verify = true;
+                    this.verifyFlag = true;
                 }
-
             });
-        }
+        },
+        createImage(coverImage) {
+            if ((isNaN(coverImage))) {
+                this.img = this.store.urlImage + coverImage;
+                this.verifyImg = true;
+            }
+        },
     },
-
     beforeMount() {
         this.show(this.language);
+        this.createImage(this.image);
     },
-
     updated() {
         this.show(this.language);
+        this.createImage(this.image);
     },
+
 }
 </script>
 <style lang="scss">
