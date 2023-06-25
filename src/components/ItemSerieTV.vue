@@ -98,7 +98,11 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: black;
 
+        p {
+            color: white;
+        }
 
         img {
             width: 100%;

@@ -34,6 +34,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+h1 {
+    margin-right: .5rem;
+}
+
 .my_stars_full {
     color: rgb(255, 214, 63);
 }
