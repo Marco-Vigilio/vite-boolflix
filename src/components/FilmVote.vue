@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="d-flex">
+        <h1 class="bold">Voto:</h1>
         <i v-for="n in starsFull" class="fa-solid fa-star my_stars_full"></i>
         <i v-for="n in starsEmpty" class="fa-solid fa-star my_stars_empty"></i>
     </div>
@@ -33,6 +34,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+h1 {
+    margin-right: .5rem;
+}
+
 .my_stars_full {
     color: rgb(255, 214, 63);
 }

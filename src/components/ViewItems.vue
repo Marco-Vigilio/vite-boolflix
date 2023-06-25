@@ -1,22 +1,18 @@
 <template>
-    <div>
+    <div class="my_contain">
         <h1>Film</h1>
-        <ItemFilm v-for="element in store.arrayObjectFilm" :title=element.title :originalTitle=element.original_title
-            :language=element.original_language :vote=element.vote_average :image=element.poster_path />
-    </div>
-    <div>
-        <h1>Serie Tv</h1>
-        <ItemSerieTV v-for="element in store.arrayObjectSerieTv" :title=element.name :originalTitle=element.original_name
-            :language=element.original_language :vote=element.vote_average :image=element.poster_path />
-
-        <!--
-        <div v-for="element in store.arrayFlags">
-            <p>
-                {{ element.name }} {{ element.language }}
-            </p>
-            <img :src="element.flag" :alt="element.name + ' image flag'">
+        <div class="d-flex flex-wrap ">
+            <ItemFilm v-for="element in store.arrayObjectFilm" :title=element.title :originalTitle=element.original_title
+                :language=element.original_language :vote=element.vote_average :image=element.poster_path
+                :overview=element.overview />
         </div>
--->
+
+        <h1>Serie Tv</h1>
+        <div class="d-flex flex-wrap ">
+            <ItemSerieTV v-for="element in store.arrayObjectSerieTv" :title=element.name
+                :originalTitle=element.original_name :language=element.original_language :vote=element.vote_average
+                :image=element.poster_path :overview=element.overview />
+        </div>
     </div>
 </template>
 <script>
@@ -42,8 +38,18 @@ export default {
     },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+.my_contain {
+    background-color: rgb(58, 52, 52);
+}
+
 img {
     width: 70px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin: 3rem;
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
-    <main>
+    <header>
         <Search @parola="wordOfMouth" />
+
+    </header>
+    <main>
         <ViewItems />
     </main>
 </template>
@@ -30,7 +33,6 @@ export default {
                     this.store.arrayObjectFilm = [];
                     risposta.data.results.forEach(element => {
                         this.store.arrayObjectFilm.push(element);
-                        //console.log(element);
                     });
                 });
         },
@@ -42,10 +44,6 @@ export default {
 
                     risposta.data.results.forEach(element => {
                         this.store.arrayObjectSerieTv.push(element);
-                        //console.log(element.name);
-                        //console.log(element.original_name);
-                        //console.log(element.original_language);
-                        //console.log(element.vote_average);
                     });
                 });
         },
@@ -73,5 +71,12 @@ export default {
     },
 }
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+    nav {
+        background-color: aqua;
+        padding: 2rem;
+    }
+}
+</style>
 

@@ -1,19 +1,35 @@
 <template>
-    <div class="item">
-        <div v-if="verifyImg === true">
-            <img :src="img" :alt="title + ' poster'" />
-        </div>
-        <div v-else>
-            <p>Image not available</p>
+    <div class="item d-flex">
+        <div class="my_card">
+            <img v-if="verifyImg === true" :src="img" :alt="title + ' poster'" />
+            <p v-else>Image not available</p>
         </div>
 
-        <h1>{{ title }}</h1>
-        <h2>{{ originalTitle }}</h2>
-        <div v-if="verifyFlag === true">
-            <img :src="imageFlag" :alt="nameFlag + ' flag'">
+        <div class="my_card_hover">
+            <div class="">
+                <h1 class="bold">Titolo</h1>
+                <h1>{{ title }}</h1>
+            </div>
+
+            <div class="">
+                <h1 class="bold">Titolo Originale</h1>
+                <h1>{{ originalTitle }}</h1>
+            </div>
+
+            <div class="">
+                <h1 class="bold">Original languages:</h1>
+                <img v-if="verifyFlag === true" :src="imageFlag" :alt="nameFlag + ' flag'">
+                <h1 v-else> {{ language }}</h1>
+            </div>
+
+            <SerieTvVote :voteSerieTV=vote />
+
+            <div class="">
+                <h1 class="bold">OverView:</h1>
+                <h1>{{ overview }}</h1>
+            </div>
         </div>
-        <h3 v-else>Original languages: {{ language }}</h3>
-        <SerieTvVote :voteSerieTV=vote />
+
     </div>
 </template>
 <script>
@@ -37,6 +53,7 @@ export default {
         language: String,
         vote: String,
         image: String,
+        overview: String,
     },
     methods: {
         show(initials) {
@@ -67,4 +84,60 @@ export default {
     },
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.item {
+    position: relative;
+    display: flex;
+    width: calc(100% / 5);
+    margin-bottom: 2.5rem;
+
+    .my_card {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: contain;
+        }
+    }
+
+    .my_card_hover {
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+
+        div {
+            margin-bottom: 1.5rem;
+        }
+
+        img {
+            width: 50px;
+        }
+    }
+
+    &:hover .my_card_hover {
+        position: absolute;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        display: block;
+
+        h1 {
+            font-size: .9rem;
+            font-weight: 400;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    }
+
+}
+</style>

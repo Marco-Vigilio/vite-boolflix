@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="d-flex">
+        <h1 class="bold">Voto:</h1>
         <i v-for="n in starsFull" class="fa-solid fa-star my_stars_full"></i>
         <i v-for="n in starsEmpty" class="fa-solid fa-star my_stars_empty"></i>
     </div>
